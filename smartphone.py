@@ -7,7 +7,16 @@ def prijzen(goedkoopNaam, duurNaam, goedkoop, duur):
     return f"De {duurNaam} is het duurst, de telefoon kost: {duur} Euro\nDe {goedkoopNaam} is het goedkoopst, de telefoon kost: {goedkoop} Euro"
 
 
-if samsung < iphone <= samsung + 50:
+if iphone > 900 and samsung > 900:
+    if iphone < samsung:
+        print(prijzen("iPhone", "Samsung", iphone, samsung))
+        print("Het advies is dus geen telefoon te kopen, ze zijn te duur")
+    elif iphone > samsung:
+        print(prijzen("Samsung", "iPhone", samsung, iphone))
+        print("Het advies is dus geen telefoon te kopen, ze zijn te duur")
+    else:
+        print("Het advies is dus geen telefoon te kopen, ze zijn te duur")
+elif samsung < iphone <= samsung + 50 and iphone <= 900:
     verschil = iphone - samsung
     print(prijzen("Samsung", "iPhone", samsung, iphone))
     print(f"Het advies is dus de iPhone te kopen. Deze is namelijk {verschil} euro duurder dan de Samsung")
